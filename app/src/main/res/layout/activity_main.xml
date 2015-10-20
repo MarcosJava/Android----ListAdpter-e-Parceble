@@ -9,11 +9,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_voo"
-        android:id="@+id/button"
+        android:id="@+id/bnt_salvar"
+        android:onClick="opcoes"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="53dp"
         android:layout_marginStart="53dp"
         android:layout_marginTop="99dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lst_voo"
+        android:id="@+id/bnt_listar"
+        android:onClick="opcoes"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/bnt_salvar"
+        android:layout_alignStart="@+id/bnt_salvar" />
 </RelativeLayout>

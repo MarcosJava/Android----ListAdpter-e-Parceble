@@ -5,10 +5,13 @@
     <string name="action_settings">Settings</string>
 
     <string name="add_voo">Adicionar Voo</string>
+    <string name="lst_voo">Listar Voo</string>
+
     <string name="title_activity_cadastrar_voo">CadastrarVooActivity</string>
 
     <string name="lb_nome">Nome</string>
     <string name="lb_no_voo">No Voo</string>
     <string name="lb_destino">Destino</string>
+    <string name="title_activity_lista_voo">ListaVooActivity</string>
 
 </resources>
