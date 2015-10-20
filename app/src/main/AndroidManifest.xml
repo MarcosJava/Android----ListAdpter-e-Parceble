@@ -20,6 +20,15 @@
             android:name=".CadastrarVooActivity"
             android:label="@string/title_activity_cadastrar_voo" >
         </activity>
+        <activity
+            android:name=".ErroActivity"
+            android:label="@string/title_activity_cadastrar_voo" >
+        </activity>
+        <activity
+            android:name=".SucessoActivity"
+            android:label="@string/title_activity_cadastrar_voo" >
+        </activity>
+
     </application>
 
 </manifest>

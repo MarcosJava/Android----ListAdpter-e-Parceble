@@ -1,5 +1,6 @@
 package br.com.mrcsfelipe.voo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                
+                Intent intencao = new Intent(MainActivity.this, CadastrarVooActivity.class);
+                startActivity(intencao);
 
             }
         });
