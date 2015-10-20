@@ -24,7 +24,7 @@ public class ErroActivity extends AppCompatActivity {
             value.append(error).append("\n");
         }
 
-        TextView message = (TextView) this.findViewById(R.id.textViewMessage);
+        TextView message = (TextView) this.findViewById(R.id.textViewMessageErro);
         message.setText(value);
     }
 }

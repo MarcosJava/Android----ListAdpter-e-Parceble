@@ -32,51 +32,49 @@ public class CadastrarVooActivity extends AppCompatActivity {
         destino = (EditText) findViewById(R.id.et_destino);
         salvar = (Button) findViewById(R.id.bnt_salvar);
 
-        salvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                List<CharSequence> msgsErros = new ArrayList<CharSequence>();
-                try{
 
-                    String lbNome = nome.getText().toString().trim();
-                    String lbDestino = destino.getText().toString().trim();
-                    String lbnumVoo = noVoo.getText().toString().trim();
+    }
 
-                    if(TextUtils.isEmpty(lbNome)){
-                        msgsErros.add("Insira o nome");
-                    }
+    public void salvar(View view){
+        List<CharSequence> msgsErros = new ArrayList<CharSequence>();
+        try{
 
-                    if(TextUtils.isEmpty(lbDestino)){
-                        msgsErros.add("Insire o valor para destino");
-                    }
+            String lbNome = nome.getText().toString().trim();
+            String lbDestino = destino.getText().toString().trim();
+            String lbnumVoo = noVoo.getText().toString().trim();
 
-                    Integer numVoo = 0;
-                    try{
-                        numVoo = Integer.parseInt(lbnumVoo);
-                    }catch (Exception e){
-                        msgsErros.add("Adicione o numero do voo");
-                    }
-
-                    if(!msgsErros.isEmpty()){
-
-                        Intent intencao = new Intent(CadastrarVooActivity.this, SucessoActivity.class);
-                        intencao.putExtra("erros", (Parcelable) msgsErros);
-                        startActivity(intencao);
-                        return;
-                    }
-
-                    voo = new Voo(lbNome,numVoo, lbDestino);
-
-                    Intent intencao = new Intent(CadastrarVooActivity.this, SucessoActivity.class);
-                    intencao.putExtra("sucesso", voo);
-                    startActivity(intencao);
-
-                }catch (Exception e){
-
-                }
-
+            if(TextUtils.isEmpty(lbNome)){
+                msgsErros.add("Insira o nome");
             }
-        });
+
+            if(TextUtils.isEmpty(lbDestino)){
+                msgsErros.add("Insire o valor para destino");
+            }
+
+            Integer numVoo = 0;
+            try{
+                numVoo = Integer.parseInt(lbnumVoo);
+            }catch (Exception e){
+                msgsErros.add("Adicione o numero do voo");
+            }
+
+            if(!msgsErros.isEmpty()){
+
+                Intent intencao = new Intent(CadastrarVooActivity.this, SucessoActivity.class);
+                intencao.putExtra("erros", (Parcelable) msgsErros);
+                startActivity(intencao);
+                return;
+            }
+
+            voo = new Voo(lbNome,numVoo, lbDestino);
+
+            Intent intencao = new Intent(CadastrarVooActivity.this, SucessoActivity.class);
+            intencao.putExtra("sucesso", voo);
+            startActivity(intencao);
+
+        }catch (Exception e){
+
+        }
     }
 
     @Override
