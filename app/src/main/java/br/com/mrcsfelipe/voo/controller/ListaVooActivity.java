@@ -20,12 +20,12 @@ public class ListaVooActivity extends AppCompatActivity {
 
 
         ListView listView = (ListView) findViewById(R.id.listViewVoo);
-
+        /*
         SucessoActivity.voos.add(new Voo("Marcos", 1, "London"));
         SucessoActivity.voos.add(new Voo("Marateo", 2, "Portugal"));
         SucessoActivity.voos.add(new Voo("Alequer", 3, "New York"));
         SucessoActivity.voos.add(new Voo("Romario", 4, "Brasil"));
-
+        */
         VooAdapterList adapter = new VooAdapterList(ListaVooActivity.this, android.R.layout.simple_list_item_1, SucessoActivity.voos);
         listView.setAdapter(adapter);
     }

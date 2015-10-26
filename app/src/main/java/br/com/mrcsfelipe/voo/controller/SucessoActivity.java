@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.mrcsfelipe.voo.R;
+import br.com.mrcsfelipe.voo.business.VooBusiness;
 import br.com.mrcsfelipe.voo.model.Voo;
 
 /**
@@ -17,6 +18,8 @@ public class SucessoActivity extends AppCompatActivity {
 
     public static List<Voo> voos = new ArrayList<>();
 
+    private VooBusiness vooBusiness;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +28,15 @@ public class SucessoActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         Voo voo = bundle.getParcelable("sucesso");
-        voos.add(voo);
+        //voos.add(voo);
+
+        vooBusiness = new VooBusiness(this.getApplicationContext());
+        try {
+            Voo vooSalvar = new Voo(voo.getNome(),voo.getNoVoo(),voo.getDestino());
+            vooBusiness.salvar(vooSalvar);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         StringBuffer value = new StringBuffer();

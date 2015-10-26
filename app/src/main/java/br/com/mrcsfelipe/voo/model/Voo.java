@@ -8,6 +8,7 @@ import android.os.Parcelable;
  */
 public class Voo implements Parcelable{
 
+    private Integer id;
     private String nome;
     private Integer noVoo;
     private String destino;
@@ -17,6 +18,14 @@ public class Voo implements Parcelable{
         this.noVoo = noVoo;
         this.destino = destino;
     }
+
+    public Voo(Integer id, String nome, Integer noVoo, String destino) {
+        this.id = id;
+        this.nome = nome;
+        this.noVoo = noVoo;
+        this.destino = destino;
+    }
+
 
     public Voo (Parcel in){
         readFromParcel(in);

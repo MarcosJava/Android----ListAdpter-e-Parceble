@@ -28,21 +28,25 @@ public class VooAdapterList extends ArrayAdapter<Voo> {
      * private view holder class
      */
     private class ViewHolder {
+        TextView textViewDestino;
         TextView textViewNome;
         TextView textViewNoVoo;
-        TextView textViewDestino;
+
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Create viewHolder e ger dvdItem in position
         ViewHolder viewHolder = null;
+
         Voo vooItem = this.getItem(position);
 
         // Definy layout
         LayoutInflater layoutInflater =
                 (LayoutInflater) this.getContext()
                                      .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+
 
 
         // Case by exists layout
@@ -54,9 +58,9 @@ public class VooAdapterList extends ArrayAdapter<Voo> {
             viewHolder.textViewDestino = (TextView) convertView.findViewById(R.id.textViewDestin);
 
             convertView.setTag(viewHolder);
-        } else
+        } else {
             viewHolder = (ViewHolder) convertView.getTag();
-
+        }
         // Set values
         viewHolder.textViewNome.setText(vooItem.getNome());
         viewHolder.textViewNoVoo.setText(vooItem.getNoVoo().toString());
